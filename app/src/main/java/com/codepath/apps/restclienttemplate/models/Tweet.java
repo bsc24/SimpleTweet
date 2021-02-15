@@ -6,14 +6,17 @@ import com.facebook.stetho.inspector.jsonrpc.JsonRpcException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Parcel
 public class Tweet {
 
     public String body;
     public String created_at;
+    public String source;
     public User user;
 
     public Tweet() {}
@@ -22,6 +25,7 @@ public class Tweet {
         Tweet tweet = new Tweet();
         tweet.body = jsonObject.getString("text");
         tweet.created_at = jsonObject.getString("created_at");
+        tweet.source = jsonObject.getString("source").split(">")[1].split("<")[0];
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
         return tweet;
     }
@@ -44,8 +48,16 @@ public class Tweet {
         return created_at;
     }
 
-    public String getFormattedTimestamp() {
+    public String getTimeStamp() {
+        return TimeFormatter.getTimeStamp(created_at);
+    }
+
+    public String getTimeSince() {
         return TimeFormatter.getTimeDifference(created_at);
+    }
+
+    public String getSource() {
+        return source;
     }
 
     public User getUser() {
