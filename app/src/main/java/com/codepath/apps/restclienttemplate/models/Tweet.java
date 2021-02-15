@@ -1,5 +1,11 @@
 package com.codepath.apps.restclienttemplate.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import com.codepath.apps.restclienttemplate.TimeFormatter;
 import com.facebook.stetho.inspector.jsonrpc.JsonRpcException;
 
@@ -11,24 +17,39 @@ import org.parceler.Parcel;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity(foreignKeys = @ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"))
 @Parcel
 public class Tweet {
 
-    public String body;
-    public String created_at;
-    public String source;
+    @ColumnInfo
+    @PrimaryKey
     public long id;
+
+    @ColumnInfo
+    public String body;
+
+    @ColumnInfo
+    public String created_at;
+
+    @ColumnInfo
+    public String source;
+
+    @ColumnInfo
+    public long userId;
+
+    @Ignore
     public User user;
 
     public Tweet() {}
 
     public static Tweet fromJson(JSONObject jsonObject) throws JSONException {
         Tweet tweet = new Tweet();
+        tweet.id = jsonObject.getLong("id");
         tweet.body = jsonObject.getString("text");
         tweet.created_at = jsonObject.getString("created_at");
         tweet.source = jsonObject.getString("source").split(">")[1].split("<")[0];
-        tweet.id = jsonObject.getLong("id");
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
+        tweet.userId = tweet.user.getId();
         return tweet;
     }
 
