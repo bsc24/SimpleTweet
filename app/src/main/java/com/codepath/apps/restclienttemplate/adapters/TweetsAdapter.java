@@ -98,7 +98,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvBody.setText(tweet.getBody());
             tvScreenName.setText(tweet.getUser().getScreenName());
             tvName.setText("@" + tweet.getUser().getName());
-            tvTimestamp.setText(tweet.getTimeSince() + " ago");
+            tvTimestamp.setText(tweet.getTimeSince());
             Glide.with(context)
                     .load(tweet.getUser().getPublicImageUrl())
                     .transform(new RoundedCorners(100))
