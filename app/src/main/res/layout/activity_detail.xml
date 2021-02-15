@@ -24,6 +24,8 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/ivProfileImage"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:text="XxSomeUser420xX" />
 
     <TextView
@@ -34,6 +36,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/ivProfileImage"
+        android:textColor="@color/light_text"
         android:text="\@XxUsernamexX" />
 
     <TextView
@@ -45,6 +48,7 @@
         android:layout_marginTop="5dp"
         android:autoLink="all"
         android:linksClickable="true"
+        android:textColor="@color/black"
         android:text="I am a Twitter user and this is my tweet." />
 
     <TextView
@@ -54,6 +58,7 @@
         android:layout_below="@+id/tvBody"
         android:layout_alignParentStart="true"
         android:layout_marginTop="5dp"
+        android:textColor="@color/light_text"
         android:text="2:33pm August 19, 2015" />
 
     <TextView
@@ -62,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/tvTimestamp"
         android:layout_toEndOf="@+id/tvTimestamp"
-        android:text="Twitter Web App" />
+        android:textColor="@color/light_text"
+        android:text=" \u00b7 Twitter Web App" />
 
 </RelativeLayout>

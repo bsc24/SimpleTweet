@@ -25,6 +25,8 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/ivProfileImage"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:text="XxSomeUser420xX" />
 
 
@@ -36,6 +38,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/tvScreenName"
+        android:textColor="@color/light_text"
         android:text="\@XxUsernamexX" />
 
     <TextView
@@ -43,8 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="5dp"
         android:layout_toEndOf="@+id/tvName"
+        android:textColor="@color/light_text"
         android:text="2h" />
 
     <TextView
@@ -57,6 +60,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
         android:layout_toEndOf="@+id/ivProfileImage"
+        android:textColor="@color/black"
         android:text="I am a Twitter user and this is my tweet." />
 
 </RelativeLayout>
