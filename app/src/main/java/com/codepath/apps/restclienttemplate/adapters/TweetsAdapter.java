@@ -76,6 +76,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     // Define a viewholder
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        RelativeLayout container;
         ImageView ivProfileImage;
         TextView tvBody;
         TextView tvScreenName;
@@ -84,6 +85,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            container = itemView.findViewById(R.id.rlTweets);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
@@ -91,7 +93,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvTimestamp = itemView.findViewById(R.id.tvTimestamp);
         }
 
-        public void bind(Tweet tweet) {
+        public void bind(final Tweet tweet) {
 
             tvBody.setText(tweet.getBody());
             tvScreenName.setText(tweet.getUser().getScreenName());
@@ -101,6 +103,17 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                     .load(tweet.getUser().getPublicImageUrl())
                     .transform(new RoundedCorners(100))
                     .into(ivProfileImage);
+
+            container.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    Log.d(TAG, "onClick");
+                    Intent i = new Intent(context, DetailActivity.class);
+                    i.putExtra("tweet", Parcels.wrap(tweet));
+                    context.startActivity(i);
+                }
+            });
         }
     }
 
