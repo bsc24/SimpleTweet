@@ -10,10 +10,10 @@ import java.util.List;
 @Dao
 public interface TweetDao {
 
-    @Query("SELECT Tweet.body AS tweet_body, Tweet.created_at AS tweet_created_at, Tweet.id AS tweet_id, User.* " +
+    @Query("SELECT Tweet.body AS tweet_body, Tweet.created_at AS tweet_created_at, Tweet.source AS tweet_source, Tweet.id AS tweet_id, User.* " +
             "FROM Tweet INNER JOIN USER ON Tweet.userID = User.id " +
             "ORDER BY Tweet.created_at " +
-            "DESC LIMIT 5")
+            "DESC LIMIT 10")
     List<TweetWithUser> recentItems();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
