@@ -33,13 +33,18 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='LoginWalkthrough.gif' title='Walkthrough of Login' width='' alt='Video Walkthrough of login functionality and detailed tweet view' />
+
+<img src='ClickableLinksWalkthrough.gif' title='Walkthrough of Clickable Links' width='' alt='Video Walkthrough showing clickable links in tweets' />
+
+<img src='OfflineTweetsWalkthrough.gif' title='Walkthrough of Viewing Tweets Offline' width='' alt='Video Walkthrough of viewing last loaded tweets while offline' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+- I was rate limited after testing out the infinite pagination too far and then restarting the app a few times while testing out UI changes, so I had to wait a couple minutes for the rate limit to reset
 
 ## Open-source libraries used
 
