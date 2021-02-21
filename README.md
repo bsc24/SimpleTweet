@@ -33,11 +33,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='LoginWalkthrough.gif' title='Walkthrough of Login' width='' alt='Video Walkthrough of login functionality and detailed tweet view' />
+<img src='LoginWalkthrough.gif' title='Walkthrough of Login' width='' alt='Video walkthrough of login functionality and detailed tweet view' />
 
-<img src='ClickableLinksWalkthrough.gif' title='Walkthrough of Clickable Links' width='' alt='Video Walkthrough showing clickable links in tweets' />
+<img src='ClickableLinksWalkthrough.gif' title='Walkthrough of Clickable Links' width='' alt='Video walkthrough showing clickable links in tweets' />
 
-<img src='OfflineTweetsWalkthrough.gif' title='Walkthrough of Viewing Tweets Offline' width='' alt='Video Walkthrough of viewing last loaded tweets while offline' />
+<img src='OfflineTweetsWalkthrough.gif' title='Walkthrough of Viewing Tweets Offline' width='' alt='Video walkthrough of viewing last loaded tweets while offline' />
+
+<img src='PublishTweetWalkthrough.gif' title='Walkthrough of Publishing a Tweet' width='' alt='Video walkthrough of publishing a tweet' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
