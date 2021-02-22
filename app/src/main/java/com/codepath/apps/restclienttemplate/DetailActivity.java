@@ -41,8 +41,8 @@ public class DetailActivity extends Activity {
         Tweet tweet = Parcels.unwrap(getIntent().getParcelableExtra("tweet"));
 
         tvBody.setText(tweet.getBody());
-        tvScreenName.setText(tweet.getUser().getScreenName());
-        tvName.setText("@" + tweet.getUser().getName());
+        tvScreenName.setText("@" + tweet.getUser().getScreenName());
+        tvName.setText(tweet.getUser().getName());
         tvTimestamp.setText(tweet.getTimeStamp());
         tvSource.setText(" \u00b7 " + tweet.getSource());
 

@@ -18,7 +18,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvScreenName"
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -30,10 +30,10 @@
         android:text="XxSomeUser420xX" />
 
     <TextView
-        android:id="@+id/tvName"
+        android:id="@+id/tvScreenName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvScreenName"
+        android:layout_below="@+id/tvName"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/ivProfileImage"
