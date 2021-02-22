@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
@@ -20,12 +23,13 @@ import okhttp3.Headers;
 
 public class ComposeActivity extends AppCompatActivity {
 
-    public static final String TAG = "CompseActivity";
+    public static final String TAG = "ComposeActivity";
     public static final int MAX_TWEET_LENGTH = 140;
 
     TwitterClient client;
 
     EditText etCompose;
+    TextView tvCharacterCount;
     Button btnTweet;
 
     @Override
@@ -36,6 +40,26 @@ public class ComposeActivity extends AppCompatActivity {
         client = TwitterApp.getRestClient(this);
 
         etCompose = findViewById(R.id.etCompose);
+        tvCharacterCount = findViewById(R.id.tvCharacterCount);
+
+        etCompose.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Log.d(TAG, "beforeTextChanged");
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Log.d(TAG, "onTextChanged");
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                Log.d(TAG, "afterTextChanged");
+                tvCharacterCount.setText(etCompose.getText().length() + "/280");
+            }
+        });
+
         btnTweet = findViewById(R.id.btnTweet);
 
         // Set a click listener
@@ -48,6 +72,7 @@ public class ComposeActivity extends AppCompatActivity {
                     return;
                 } else if (tweetContent.length() > MAX_TWEET_LENGTH) {
                     Toast.makeText(ComposeActivity.this, "Tweet cannot exceed 140 characters.", Toast.LENGTH_LONG).show();
+                    return;
                 }
 
                 // Make an API call to Twitter to publish the tweet
