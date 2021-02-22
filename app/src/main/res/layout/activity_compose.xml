@@ -11,14 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="What's new today?"
-        android:textColor="@color/black"
         android:inputType="textMultiLine"
-        android:minLines="5" />
+        android:minLines="5"
+        android:textColor="@color/twitter_black" />
 
     <TextView
         android:id="@+id/tvCharacterCount"
@@ -29,7 +29,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:text="0/280"
-        android:textColor="@color/light_text" />
+        android:textColor="@color/twitter_light_gray" />
 
     <Button
         android:id="@+id/btnTweet"
@@ -41,7 +41,7 @@
         android:layout_marginEnd="5dp"
         android:background="@drawable/mybutton"
         android:text="@string/tweet"
-        android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:textColor="@color/twitter_extra_light_gray"
+        android:textStyle="bold" />
 
 </RelativeLayout>

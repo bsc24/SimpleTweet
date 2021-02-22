@@ -13,7 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
+        android:background="@drawable/mybutton"
         android:onClick="loginToRest"
+        android:textColor="@color/twitter_extra_light_gray"
+        android:textStyle="bold"
         android:text="@string/login_label" />
 
 </RelativeLayout>
